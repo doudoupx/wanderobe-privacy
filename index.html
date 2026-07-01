@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wanderobe Privacy Policy / 隐私政策</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg:        #f7f2e8;
+    --bg-soft:   #efe8d8;
+    --ink:       #1a1814;
+    --ink-soft:  #3d362c;
+    --ink-mute:  #8a8175;
+    --rule:      #d8ceb8;
+    --rule-soft: #e6dcc6;
+    --accent:    #8c4a2a;
+    --accent-tint: rgba(140, 74, 42, 0.06);
+    --serif: "New York", "Songti SC", "Source Han Serif SC", "Noto Serif CJK SC", ui-serif, Georgia, Cambria, "Times New Roman", serif;
+    --sans:  -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --mono:  ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:        #14110c;
+      --bg-soft:   #1d1914;
+      --ink:       #ede6d6;
+      --ink-soft:  #c5bba6;
+      --ink-mute:  #847b6c;
+      --rule:      #2e2920;
+      --rule-soft: #221e17;
+      --accent:    #d9a173;
+      --accent-tint: rgba(217, 161, 115, 0.08);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    background: var(--bg);
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0 auto;
+    padding: 6rem 1.6rem 7rem;
+    max-width: 40rem;
+    font-family: var(--sans);
+    font-size: 16.5px;
+    line-height: 1.78;
+    color: var(--ink-soft);
+    background: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern", "liga", "calt";
+    animation: rise .85s cubic-bezier(.2,.7,.2,1) both;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  /* ── Masthead ─────────────────────────────────────────── */
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.05rem, 4.5vw + 1rem, 2.95rem);
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+    margin: 0 0 1.6rem;
+    font-feature-settings: "kern", "liga", "dlig";
+  }
+
+  h1::before {
+    content: "❦";
+    display: block;
+    color: var(--accent);
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    line-height: 1;
+    margin-bottom: 1.8rem;
+    opacity: .9;
+  }
+
+  .meta {
+    display: block;
+    margin: 0 0 2.6rem;
+    font-family: var(--sans);
+    font-size: .68rem;
+    letter-spacing: .26em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    line-height: 2;
+  }
+  .meta strong { font-weight: 600; color: var(--ink-soft); }
+
+  /* ── Language toggle ──────────────────────────────────── */
+
+  .lang-toggle {
+    display: flex;
+    align-items: baseline;
+    gap: .9rem;
+    margin: 0 0 4rem;
+    font-family: var(--sans);
+    font-size: .72rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+  }
+  .lang-toggle a {
+    color: var(--ink-mute);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 3px;
+    transition: color .25s ease, border-color .25s ease;
+  }
+  .lang-toggle a:hover { color: var(--ink); }
+  .lang-toggle span {
+    color: var(--rule);
+    font-size: 1em;
+    line-height: 1;
+  }
+
+  /* default active = 中文 */
+  .lang-toggle a[href="#zh"] {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    font-weight: 600;
+  }
+  /* when #en is targeted, EN active, 中文 muted */
+  body:has(.lang-en:target) .lang-toggle a[href="#zh"] {
+    color: var(--ink-mute);
+    border-bottom-color: transparent;
+    font-weight: 400;
+  }
+  body:has(.lang-en:target) .lang-toggle a[href="#en"] {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ── Language sections ────────────────────────────────── */
+
+  .lang-en { display: none; }
+  body:has(.lang-en:target) .lang-zh { display: none; }
+  body:has(.lang-en:target) .lang-en { display: block; }
+
+  /* ── Numbered subsection heading ──────────────────────── */
+
+  h2 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 1.02rem;
+    line-height: 1.45;
+    letter-spacing: 0.005em;
+    color: var(--ink);
+    margin: 3.4rem 0 1.1rem;
+  }
+  /* first section heading sits tighter under the toggle */
+  .lang > h2:first-child { margin-top: 1.5rem; }
+
+  /* ── Body copy ────────────────────────────────────────── */
+
+  p {
+    margin: 0 0 1.2rem;
+    hyphens: auto;
+  }
+  /* the opening intro paragraph of each language, slightly larger */
+  .lang > p:first-of-type,
+  .lang > h2:first-child + p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  ul {
+    list-style: none;
+    margin: 1rem 0 1.6rem;
+    padding-left: 1.4rem;
+  }
+  ul li {
+    position: relative;
+    margin-bottom: .75rem;
+  }
+  ul li::before {
+    content: "";
+    position: absolute;
+    left: -1.1rem;
+    top: .82em;
+    width: .55em;
+    height: 1px;
+    background: var(--accent);
+    opacity: .85;
+  }
+
+  /* ── Data tables — newspaper rules only ───────────────── */
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.6rem 0 2.8rem;
+    font-size: .9rem;
+    line-height: 1.55;
+  }
+  thead th {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: .66rem;
+    letter-spacing: .17em;
+    text-transform: uppercase;
+    text-align: left;
+    color: var(--accent);
+    padding: .95rem .85rem 1rem;
+    border-top: 1.5px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    background: transparent;
+    vertical-align: bottom;
+  }
+  tbody td {
+    padding: .95rem .85rem;
+    border-bottom: 1px solid var(--rule-soft);
+    vertical-align: top;
+    color: var(--ink-soft);
+  }
+  tbody tr:last-child td {
+    border-bottom: 1.5px solid var(--ink);
+  }
+  tbody td strong { color: var(--ink); }
+  tbody td:first-child { color: var(--ink); }
+
+  /* ── Links ────────────────────────────────────────────── */
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    padding-bottom: .5px;
+    transition: border-color .25s ease, color .25s ease;
+    word-break: break-word;
+  }
+  a:hover {
+    border-bottom-color: var(--accent);
+    color: var(--ink);
+  }
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  code {
+    font-family: var(--mono);
+    font-size: .87em;
+    background: var(--accent-tint);
+    padding: .14em .42em;
+    border-radius: 3px;
+    color: var(--ink);
+  }
+
+  /* ── Responsive ───────────────────────────────────────── */
+
+  @media (max-width: 600px) {
+    body {
+      padding: 3.5rem 1.25rem 4.5rem;
+      font-size: 16px;
+    }
+    h1 { font-size: 2rem; }
+    .lang-toggle { margin-bottom: 3rem; }
+    h2 { margin-top: 2.8rem; }
+    table { font-size: .82rem; }
+    thead th, tbody td { padding: .7rem .55rem; }
+  }
+
+  /* ── Print ────────────────────────────────────────────── */
+
+  @media print {
+    :root {
+      --bg: #fff;
+      --bg-soft: #fff;
+      --ink: #000;
+      --ink-soft: #1a1a1a;
+      --ink-mute: #555;
+      --rule: #888;
+      --rule-soft: #ccc;
+      --accent: #000;
+      --accent-tint: transparent;
+    }
+    body { animation: none; padding: 0; max-width: none; }
+    h1::before { display: none; }
+    a { color: #000; border-bottom-color: #888; }
+    .lang-toggle { display: none; }
+    /* show both languages in print */
+    .lang-en { display: block !important; }
+    .lang-zh { display: block !important; }
+    .lang-en::before {
+      content: "";
+      display: block;
+      margin-top: 4rem;
+      border-top: 1px solid #888;
+      padding-top: 2rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Wanderobe 隐私政策 / Privacy Policy</h1>
+
+<p class="meta"><strong>生效日期 / Effective date: 2026-05-22</strong><br>
+<strong>更新日期 / Last updated: 2026-06-11</strong></p>
+
+<nav class="lang-toggle" aria-label="Language">
+  <a href="#zh">中文</a>
+  <span aria-hidden="true">·</span>
+  <a href="#en">English</a>
+</nav>
+
+<section id="zh" class="lang lang-zh">
+
+<p>Wanderobe（"本应用"）由其开发者（以下称"我们"）开发并运营。本政策说明我们如何收集、
+使用、存储、共享和保护你的个人信息，以及你享有的权利。请在使用前仔细阅读。
+<strong>本应用可选择通过 Apple 登录（仅用于行程协作身份识别），不收集姓名、手机号、邮箱等身份信息，不接入任何广告或追踪 SDK，不会出售你的个人信息。</strong></p>
+
+<h2>1. 我们如何收集和使用你的个人信息</h2>
+<p>我们仅为实现以下业务功能、在你授权的范围内处理对应信息：</p>
+
+<table>
+<thead><tr><th>业务功能</th><th>处理的信息</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>形象照 / 虚拟试穿</td><td>你拍摄或选取的<strong>人物照片（含人脸）</strong>、衣物照片</td><td>见第 2 节敏感信息特别说明</td></tr>
+<tr><td>行程生成 / 穿搭推荐</td><td>目的地、日期、旅行风格、衣物名称与类别</td><td>文本，用于生成行程与推荐</td></tr>
+<tr><td>当地天气</td><td><strong>精确位置（经纬度，需授权）</strong></td><td>见第 2 节；见第 4 节出境说明</td></tr>
+<tr><td>景点配图</td><td>地点名称</td><td>用于检索景点图片</td></tr>
+<tr><td>防滥用与安全</td><td>设备标识（本机随机 UUID，<strong>非</strong> IDFA）、IP 地址</td><td>仅用于服务端限流与安全，不关联身份、不用于广告</td></tr>
+<tr><td>产品改进分析</td><td>匿名安装 ID、会话 ID、App 版本、系统版本、语言地区、页面访问与功能事件</td><td>用于统计激活安装、活跃、留存与功能漏斗；可在设置中关闭，不包含照片、姓名、prompt、精确位置或详细地址</td></tr>
+<tr><td>订阅会员</td><td>Apple 内购的订阅有效状态</td><td>支付由 Apple 处理，我们不接触你的支付信息</td></tr>
+<tr><td>行程协作</td><td>Apple 用户标识（匿名 sub，Apple 生成）；行程快照与操作日志</td><td>仅用于共享行程同步；可选，不使用则不收集；<strong>注销账号时从服务器删除</strong>；解散行程（停止共享）后其他成员不再可访问</td></tr>
+</tbody>
+</table>
+
+<h2>2. 敏感个人信息特别说明（重要）</h2>
+<p>以下属于敏感个人信息，我们会在收集前以<strong>单独同意</strong>的方式取得你的授权，你可随时拒绝
+或撤回（拒绝后仅影响相应功能，不影响其他功能使用）：</p>
+<ul>
+<li><strong>人脸照片</strong>：用于生成你的形象照与虚拟试穿效果。照片会发送至下述第三方进行图像
+生成，处理后返回结果；我们的服务器<strong>不留存</strong>该照片，仅在你的设备本地保存。</li>
+<li><strong>精确位置</strong>：仅用于获取你所在位置的天气，不用于其他目的。</li>
+</ul>
+
+<h2>3. 我们如何共享、委托处理</h2>
+<p>为实现功能，部分信息会<strong>委托</strong>以下第三方处理（仅限实现对应功能所必需，受协议约束）：</p>
+
+<table>
+<thead><tr><th>接收方</th><th>处理的信息</th><th>目的</th><th>隐私政策</th></tr></thead>
+<tbody>
+<tr><td>火山引擎（北京火山引擎科技）</td><td>人物/衣物照片</td><td>形象照、虚拟试穿图像生成</td><td><a href="https://www.volcengine.com/trust/privacy">链接</a></td></tr>
+<tr><td>深度求索 DeepSeek</td><td>行程/衣橱文本、地点名称</td><td>行程生成、穿搭推荐、地名解析</td><td><a href="https://cdn.deepseek.com/policies/zh-CN/deepseek-privacy-policy.html">链接</a></td></tr>
+<tr><td>Apple 天气（WeatherKit）</td><td>精确经纬度</td><td>获取当地天气</td><td><a href="https://www.apple.com/legal/privacy/">链接</a></td></tr>
+<tr><td>维基共享资源 Wikimedia Commons</td><td>地点名称</td><td>检索景点图片</td><td><a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">链接</a></td></tr>
+<tr><td>Apple</td><td>内购交易</td><td>处理订阅与支付</td><td><a href="https://www.apple.com/legal/privacy/">链接</a></td></tr>
+<tr><td>我们自建的埋点服务</td><td>匿名安装 ID、会话 ID、版本/系统信息、页面访问与功能事件</td><td>产品统计、留存与漏斗分析</td><td>本政策</td></tr>
+</tbody>
+</table>
+
+<p>我们的服务器对发往火山引擎、DeepSeek 的请求<strong>仅做转发，不存储</strong>你的照片；<strong>开启协作的行程，其行程内容（快照与编辑操作日志）会保存在我们的服务器</strong>，用于多设备/多成员同步；<strong>注销账号时删除</strong>；解散行程（停止共享）后行程回归创建者个人同步，其他成员不再可访问。服务端日志仅记录请求的时间、路径、状态码与 IP（用于运维与限流），不记录请求内容。产品分析事件仅记录匿名事件名与非敏感属性，不记录照片、prompt 原文、姓名、精确位置或详细地址。我们不会转让或公开披露你的个人信息，法律法规另有规定或经你单独同意的除外。</p>
+
+<h2>4. 个人信息出境</h2>
+<p>当地天气由 <strong>Apple 天气（WeatherKit）</strong>提供。为获取天气，<strong>精确位置（经纬度）会发送给
+Apple</strong>；Apple 不会将其与你的身份关联，仅用于返回天气。该处理可能涉及个人信息出境，我们
+会在收集精确位置时一并取得你对此的<strong>单独同意</strong>。火山引擎、DeepSeek 均在中国境内，不涉及
+出境。</p>
+
+<h2>5. 我们如何存储和保护</h2>
+<ul>
+<li><strong>存储地点与期限</strong>：你的照片、行程、衣橱数据<strong>主要保存在你的设备本地</strong>；删除应用内内容或卸载应用即删除。我们的服务器不持久化你的照片；开启协作的行程，其行程内容（快照与操作日志）会保存在服务器用于同步，<strong>注销账号时删除</strong>；解散行程（停止共享）后行程回归创建者个人同步，其他成员不再可访问。运维日志中的 IP 等仅短期保留用于安全与限流，到期清除。</li>
+<li><strong>安全措施</strong>：全程使用 HTTPS/TLS 加密传输；服务端不留存内容、仅做最小化日志；提供商
+API 密钥仅保存在服务器，绝不下发到客户端。但请理解，任何措施都无法保证绝对安全。</li>
+</ul>
+
+<h2>6. 你的权利</h2>
+<p>依据《个人信息保护法》，你享有对个人信息的查阅、复制、更正、补充、删除以及撤回同意的权利：</p>
+<ul>
+<li><strong>删除</strong>：删除应用内对应内容或卸载应用，即清除本地个人信息。</li>
+<li><strong>撤回同意</strong>：在系统设置中关闭本应用的相机、相册、定位权限；关闭后相应功能停止收集。</li>
+<li><strong>关闭产品分析</strong>：在应用"设置"中关闭"帮助改进产品"后，我们不再发送页面访问、功能漏斗等非必要产品分析事件。</li>
+<li><strong>查阅/更正/复制及其他</strong>：通过下方邮箱联系我们，我们将在法定期限内核实并响应。</li>
+<li><strong>账号注销</strong>：使用 Apple 登录后，可在应用 设置 → 注销账号 删除账号——服务器将<strong>删除</strong>你创建的共享行程（含全部快照与操作日志），并移除你在他人共享行程中的成员记录与昵称；你在他人共享行程中的历史编辑记录（以假名化用户标识关联）随该行程保留，行程被解散或删除时一并删除。注销后本地数据保留在设备上；卸载应用即清除本地数据。</li>
+</ul>
+
+<h2>7. 未成年人</h2>
+<p>本应用不面向不满 14 周岁的儿童，也不会有意收集儿童个人信息。若你为未成年人，请在
+监护人同意并指导下使用。</p>
+
+<h2>8. Cookie 及同类技术</h2>
+<p>本应用不使用 Cookie，也不接入任何第三方分析、追踪或广告类 SDK。本应用会使用自建的一方产品分析服务统计匿名使用情况，帮助我们改进功能；你可在应用设置中关闭。</p>
+
+<h2>9. 本政策的更新</h2>
+<p>我们可能适时更新本政策，更新后修订上方"更新日期"。涉及敏感信息或共享等重大变更时，
+我们会在应用内显著告知并在必要时重新征得你的同意。</p>
+
+<h2>10. 如何联系我们与投诉</h2>
+<ul>
+<li>邮箱：<a href="mailto:qinuobiao3@gmail.com">qinuobiao3@gmail.com</a></li>
+<li>我们将在收到请求后的法定期限内回复。若你认为我们的处理侵害了你的权益，也可向网信、
+工信等主管部门投诉举报。</li>
+</ul>
+
+</section>
+
+<section id="en" class="lang lang-en">
+
+<p>Wanderobe ("the App") is developed and operated by its developer ("we"). This
+policy explains how we collect, use, store, share, and protect your personal
+information, and your rights. <strong>The App optionally uses Sign in with Apple for trip-collaboration identity only; it does not collect your name, phone, or email, integrates no advertising or tracking SDK, and does not sell your personal information.</strong></p>
+
+<h2>1. What we collect and why</h2>
+<p>We process information only to provide these features, within the scope you authorize:</p>
+
+<table>
+<thead><tr><th>Feature</th><th>Information</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Avatar / virtual try-on</td><td>Person photos (<strong>including faces</strong>), clothing photos</td><td>See §2 (sensitive)</td></tr>
+<tr><td>Itinerary / outfit rec</td><td>Destinations, dates, travel styles, item names/categories</td><td>Text, for generation</td></tr>
+<tr><td>Local weather</td><td><strong>Precise location (with permission)</strong></td><td>See §2 and §4 (cross-border)</td></tr>
+<tr><td>Place photos</td><td>Place names</td><td>To retrieve images</td></tr>
+<tr><td>Abuse prevention</td><td>Device ID (on-device random UUID, <strong>not</strong> IDFA), IP</td><td>Server-side rate-limiting/security only; not linked to identity, not for ads</td></tr>
+<tr><td>Product analytics</td><td>Anonymous install ID, session ID, app version, OS version, locale, screen views and feature events</td><td>Activated installs, activity, retention, and funnels; can be disabled in Settings; excludes photos, names, prompts, precise location, and exact addresses</td></tr>
+<tr><td>Subscription</td><td>Apple IAP entitlement status</td><td>Payment handled by Apple; we never see payment data</td></tr>
+<tr><td>Trip collaboration</td><td>Apple user identifier (anonymous sub, Apple-generated); trip snapshots and operation logs</td><td>Used only for shared-trip sync; optional — not collected if you don't use collaboration; <strong>deleted from server on account deletion</strong>; on trip dissolution (stop sharing) other members lose access</td></tr>
+</tbody>
+</table>
+
+<h2>2. Sensitive personal information (important)</h2>
+<p>The following are sensitive personal information; we obtain your <strong>separate
+consent</strong> before collection, which you may decline or withdraw at any time
+(declining affects only the related feature):</p>
+<ul>
+<li><strong>Face photos</strong> — to generate your avatar and try-on results. Photos are sent
+to the third parties below for image generation and returned; our server does
+<strong>not</strong> retain them — they are stored only locally on your device.</li>
+<li><strong>Precise location</strong> — used only to fetch weather for your location.</li>
+</ul>
+
+<h2>3. Sharing and entrusted processing</h2>
+<p>To provide features, some information is entrusted to these third parties (only
+as necessary, under contract):</p>
+
+<table>
+<thead><tr><th>Recipient</th><th>Information</th><th>Purpose</th><th>Privacy policy</th></tr></thead>
+<tbody>
+<tr><td>Volcengine (Beijing Volcano Engine)</td><td>Person/clothing photos</td><td>Avatar, try-on image generation</td><td><a href="https://www.volcengine.com/trust/privacy">link</a></td></tr>
+<tr><td>DeepSeek</td><td>Trip/wardrobe text, place names</td><td>Itinerary, outfit rec, place resolution</td><td><a href="https://cdn.deepseek.com/policies/zh-CN/deepseek-privacy-policy.html">link</a></td></tr>
+<tr><td>Apple Weather (WeatherKit)</td><td>Precise coordinates</td><td>Local weather</td><td><a href="https://www.apple.com/legal/privacy/">link</a></td></tr>
+<tr><td>Wikimedia Commons</td><td>Place names</td><td>Place photos</td><td><a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy">link</a></td></tr>
+<tr><td>Apple</td><td>IAP transaction</td><td>Subscriptions &amp; payment</td><td><a href="https://www.apple.com/legal/privacy/">link</a></td></tr>
+<tr><td>Our first-party analytics service</td><td>Anonymous install ID, session ID, version/device context, screen views and feature events</td><td>Product analytics, retention, and funnels</td><td>This policy</td></tr>
+</tbody>
+</table>
+
+<p>Our server only <strong>forwards</strong> requests to Volcengine and DeepSeek and <strong>does not store</strong> your photos; <strong>for trips with collaboration enabled, trip content (snapshots and the operation log) is stored on our server</strong> for multi-device/multi-member sync and is <strong>deleted on account deletion</strong>; trip dissolution (stop sharing) returns the trip to the owner for personal sync while other members lose access. Server logs record only request time, path, status, and IP (for ops and rate-limiting), never request bodies. Product analytics events record only anonymous event names and non-sensitive properties, not photos, prompt text, names, precise location, or exact addresses. We do not transfer or publicly disclose your personal information except as required by law or with your separate consent.</p>
+
+<h2>4. Cross-border transfer</h2>
+<p>Local weather is provided by <strong>Apple Weather (WeatherKit)</strong>. To fetch weather,
+<strong>precise location (coordinates) is sent to Apple</strong>; Apple does not associate it
+with your identity and uses it only to return weather. This processing may
+involve a cross-border transfer, and we obtain your <strong>separate consent</strong> for it
+when collecting precise location. Volcengine and DeepSeek are within China and
+involve no cross-border transfer.</p>
+
+<h2>5. Storage &amp; protection</h2>
+<p>Your photos, trips, and wardrobe data live <strong>primarily on your device</strong> and are removed when you delete in-app content or uninstall. Our server does not persist your photos; for trips with collaboration enabled, trip snapshots and operation logs are stored on our server for sync and <strong>deleted on account deletion</strong>; trip dissolution (stop sharing) returns the trip to the owner, revoking others' access. Operational logs (IP, etc.) are kept briefly for security and rate-limiting, then purged. All traffic uses HTTPS/TLS; provider API keys live only on the server and are never shipped to the client. No method is 100% secure.</p>
+
+<h2>6. Your rights</h2>
+<p>Under China's PIPL you may access, copy, correct, supplement, delete, and withdraw consent for your personal information: delete in-app content or uninstall to clear local data; disable camera/photo/location permissions in Settings to withdraw consent; turn off "Help improve product" in the App's Settings to stop non-essential product analytics; contact us at the email below for other requests. <strong>Account deletion</strong>: if you signed in with Apple, go to Settings → Delete Account — the server will <strong>delete</strong> your shared trips (snapshots and operation logs) and remove your member records and display name from others' shared trips; your historical edits in those trips (linked by a pseudonymous Apple-assigned identifier) are retained with those trips and deleted when the trip is dissolved. Local data remains on your device after deletion; uninstalling removes it.</p>
+
+<h2>7. Children</h2>
+<p>The App is not directed to children under 14 and does not knowingly collect
+their personal information.</p>
+
+<h2>8. Cookies &amp; similar technologies</h2>
+<p>The App uses no cookies and integrates no third-party analytics, tracking, or advertising SDK. It uses a first-party analytics service for anonymous product usage statistics, which you can disable in the App's Settings.</p>
+
+<h2>9. Updates</h2>
+<p>We may update this policy; the "Last updated" date will change. For material
+changes (e.g., sensitive data or sharing), we will prominently notify you in-app
+and re-obtain consent where required.</p>
+
+<h2>10. Contact &amp; complaints</h2>
+<ul>
+<li>Email: <a href="mailto:qinuobiao3@gmail.com">qinuobiao3@gmail.com</a></li>
+<li>We respond within the legally required period. You may also complain to the
+relevant regulators (CAC, MIIT).</li>
+</ul>
+
+</section>
+
+</body>
+</html>
